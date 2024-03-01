@@ -1,2 +1,2 @@
 alias wttr='curl wttr.in/'
-# alias
+alias dotfiles='cd ~/dotfiles'

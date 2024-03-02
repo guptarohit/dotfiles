@@ -1,6 +1,7 @@
 alias wttr='curl wttr.in/'
 alias dotfiles='cd ~/.dotfiles'
 alias grep='grep --color=auto'
+alias ll='eza -lh'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -12,3 +13,6 @@ alias help='tldr'
 
 # Replace cat with bat
 alias cat='bat'
+
+# Open from the terminal
+alias o='open'

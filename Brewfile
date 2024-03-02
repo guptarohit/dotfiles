@@ -10,6 +10,7 @@ brew 'stow'
 brew 'tldr'
 brew 'bat'
 brew 'fzf'
+brew 'eza'
 
 # Apps
 cask 'obsidian'

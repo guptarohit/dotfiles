@@ -1,5 +1,7 @@
 # Binaries
 brew 'zsh'
+brew 'wget'
+brew 'htop'
 brew 'httpie'
 brew 'jq'
 brew 'diff-so-fancy'

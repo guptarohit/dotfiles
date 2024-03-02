@@ -11,6 +11,7 @@ brew 'tldr'
 brew 'bat'
 brew 'fzf'
 brew 'eza'
+brew 'tree'
 
 # Apps
 cask 'obsidian'

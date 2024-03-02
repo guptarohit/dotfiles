@@ -83,6 +83,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	ohmyzsh-full-autoupdate
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -171,3 +172,4 @@ for file in $sources[@]; do
         echo "config file not found: $file"
     fi
 done
+

@@ -34,20 +34,28 @@ fi
 
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
+## plugins auto-updater
+if [ ! -d "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" ] ; then
+  git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate || exit 1
+else
+  cd "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" || exit 1
+  git pull https://github.com/Pilaton/OhMyZsh-full-autoupdate.git || exit 1
+fi
+
 ## zsh-syntax-highlighting
 if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ] ; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting || exit 1
 else
-  cd "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting"
-  git pull https://github.com/zsh-users/zsh-syntax-highlighting.git
+  cd "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" || exit 1
+  git pull https://github.com/zsh-users/zsh-syntax-highlighting.git || exit 1
 fi
 
 ## zsh-autosuggestions
 if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" ] ; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions || exit 1
 else
-  cd "${ZSH_CUSTOM}/plugins/zsh-autosuggestions"
-  git pull https://github.com/zsh-users/zsh-autosuggestions.git
+  cd "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" || exit 1
+  git pull https://github.com/zsh-users/zsh-autosuggestions.git || exit 1
 fi
 
 

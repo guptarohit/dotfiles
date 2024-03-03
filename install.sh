@@ -34,12 +34,20 @@ fi
 
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
-## plugins auto-updater
+## plugins & themes auto-updater
 if [ ! -d "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" ] ; then
   git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate || exit 1
 else
   cd "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" || exit 1
   git pull https://github.com/Pilaton/OhMyZsh-full-autoupdate.git || exit 1
+fi
+
+## powerlevel10k theme
+if [ ! -d "${ZSH_CUSTOM}/themes/powerlevel10k" ] ; then
+  git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k || exit 1
+else
+  cd "${ZSH_CUSTOM}/themes/powerlevel10k" || exit 1
+  git pull https://github.com/romkatv/powerlevel10k.git || exit 1
 fi
 
 ## zsh-syntax-highlighting

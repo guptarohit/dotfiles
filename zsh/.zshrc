@@ -85,6 +85,7 @@ plugins=(
 	zsh-syntax-highlighting
 	ohmyzsh-full-autoupdate
     you-should-use
+    z
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -1,19 +1,21 @@
 # Binaries
-brew 'zsh'
-brew 'wget'
-brew 'htop'
-brew 'httpie'
-brew 'jq'
-brew 'diff-so-fancy'
-brew 'git-absorb'
-brew 'stow'
-brew 'tldr'
-brew 'bat'
-brew 'fzf'
-brew 'eza'
-brew 'tree'
-brew 'vim'
-brew 'watch'
+brew 'zsh' # zsh (latest)
+brew 'wget' # file downloader
+brew 'htop' # a colorful top alternative
+brew 'httpie' # http client
+brew 'jq' # work with JSON files in shell scripts
+brew 'diff-so-fancy' # good-looking diffs
+brew 'git-absorb' # absorb staged changes in current branch
+brew 'stow' # symlink manager
+brew 'tldr' # better than help
+brew 'bat' # better cat
+brew 'fzf' # fuzzy file searcher, used in scripts and in vim
+brew 'eza' # ls alternative
+brew 'tree' # pretty-print directory contents
+brew 'vim' # vim (latest)
+brew 'watch' # execute a program periodically
+brew 'z' # switch between most used directories
+brew 'git' # git version control (latest version)
 
 # Apps
 cask 'obsidian'

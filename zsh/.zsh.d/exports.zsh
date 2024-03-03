@@ -21,3 +21,8 @@ export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave B
 export GPG_TTY=$(tty)
 
 export PATH="$PATH:$HOME/.local/bin"
+
+# pyenv path
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

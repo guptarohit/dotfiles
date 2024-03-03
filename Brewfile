@@ -16,6 +16,8 @@ brew 'vim' # vim (latest)
 brew 'watch' # execute a program periodically
 brew 'z' # switch between most used directories
 brew 'git' # git version control (latest version)
+brew 'gnupg' # tool for managing pgp keys
+brew 'pinentry-mac' # tool that allow GnuPG to read passphrases
 
 # Apps
 cask 'obsidian'

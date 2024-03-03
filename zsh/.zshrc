@@ -28,6 +28,7 @@ plugins=(
     ohmyzsh-full-autoupdate
     you-should-use
     z
+    colored-man-pages
 )
 
 # Actually load Oh-My-Zsh

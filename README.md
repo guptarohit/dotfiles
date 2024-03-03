@@ -23,3 +23,10 @@ e.g.
 ```bash
 stow gnupg --adopt
 ```
+
+### Secret ENV data
+Private environment variables can be exported to the shell by putting them in `~/.zsh.d/private.zsh`.
+That file will be sourced when the shell initializes.
+
+### Local Git config
+system specific git configs like user's name, email, signingkey, etc. can be added to `~/.gitconfig.local`.

@@ -100,12 +100,11 @@ typeset -a sources
 CONFIG_DIR="$HOME/.zsh.d"
 
 sources+="$CONFIG_DIR/alias.zsh"
+sources+="$CONFIG_DIR/exports.zsh"
+sources+="$CONFIG_DIR/private.zsh"
 
 for file in $sources[@]; do
     if [[ -a $file ]]; then
        source $file
-    else
-        echo "config file not found: $file"
     fi
 done
-

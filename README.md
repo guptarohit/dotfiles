@@ -24,13 +24,11 @@ e.g.
 stow gnupg --adopt
 ```
 
-### Secret ENV data
-Private environment variables can be exported to the shell by putting them in `~/.zsh.d/private.zsh`.
-That file will be sourced when the shell initializes.
 
+## Local configs
 
-### Local zsg config
-system specific zsh configs can be added to `~/.zshrc.local`.
+### zsh
+System specific shell configs can be added to `~/.zshrc.local`. These will be sourced when the shell initializes.
 
-### Local Git config
-system specific git configs like user's name, email, signingkey, etc. can be added to `~/.gitconfig.local`.
+### Git
+System specific git configs like user's name, email, signingkey, etc. can be added to `~/.gitconfig.local`.

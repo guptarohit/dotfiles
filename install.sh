@@ -50,6 +50,14 @@ else
   git pull https://github.com/romkatv/powerlevel10k.git || exit 1
 fi
 
+## plugin for informing existing alias for a command
+if [ ! -d "${ZSH_CUSTOM}/plugins/you-should-use" ] ; then
+  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM}/plugins/you-should-use || exit 1
+else
+  cd "${ZSH_CUSTOM}/plugins/you-should-use" || exit 1
+  git pull https://github.com/MichaelAquilina/zsh-you-should-use.git || exit 1
+fi
+
 ## zsh-syntax-highlighting
 if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ] ; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting || exit 1

@@ -1,37 +1,43 @@
-" Use UTF-8 without BOM
-set encoding=utf-8 nobomb
-" Enable line numbers
-set number
-" Enable syntax highlighting
-syntax on
-" Highlight current line
-set cursorline
-" Show the cursor position
-set ruler
-" Highlight searches
-set hlsearch
-" Ignore case of searches
-set ignorecase
-" Show the current mode
-set showmode
-" Show the filename in the window titlebar
-set title
-" Show the (partial) command as it’s being typed
-set showcmd
+set encoding=utf-8 nobomb           " Use UTF-8 without BOM
+set number                          " Enable line numbers
+syntax on                           " Enable syntax highlighting
+set cursorline                      " Highlight current line
+set ruler                           " Show the cursor position
+set ignorecase                      " Ignore case of searches
+set title                           " Show the filename in the window titlebar
+set showcmd                         " Show the (partial) command as it’s being typed
+
 " Use relative line numbers
 if exists("&relativenumber")
 	set relativenumber
 	au BufReadPost * set relativenumber
 endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
-" Make Vim more useful
-set nocompatible
-" Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
-" Enhance command-line completion
-set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
-" Allow backspace in insert mode
-set backspace=indent,eol,start
+
+set scrolloff=3                     " Start scrolling three lines before the horizontal window border
+set nocompatible                    " Make Vim more useful
+
+set clipboard=unnamed               " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set wildmenu                        " Enhance command-line completion
+set esckeys                         " Allow cursor keys in insert mode
+set backspace=indent,eol,start      " Allow backspace in insert mode
+
+" clipboard
+set clipboard=unnamed               " allow yy, etc. to interact with OS X clipboard
+
+" search
+set hlsearch                        " highlighted search results
+set showmatch                       " show matching bracket
+
+set autoread                        " watch for file changes
+set showmode                        " show INSERT, VISUAL, etc. mode
+
+" tabs and indenting
+set autoindent                      " auto indenting
+set smartindent                     " smart indenting
+set expandtab                       " spaces instead of tabs
+set tabstop=2                       " 2 spaces for tabs
+set shiftwidth=2                    " 2 spaces for indentation
+
+" Temp Files
+set nobackup                        " No backup file
+set noswapfile                      " No swap file

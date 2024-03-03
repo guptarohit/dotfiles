@@ -15,16 +15,17 @@ CASE_SENSITIVE="false"
 ENABLE_CORRECTION="true"
 HIST_STAMPS="mm/dd/yyyy"
 
-zstyle ':omz:update' mode reminder  # :auto; disabled; reminder
+zstyle ':omz:update' mode auto  # :auto; disabled; reminder
 zstyle ':omz:update' frequency 15
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	ohmyzsh-full-autoupdate
+    git
+    gitfast
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    ohmyzsh-full-autoupdate
     you-should-use
     z
 )

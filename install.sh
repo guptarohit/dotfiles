@@ -23,60 +23,44 @@ brew tap homebrew/bundle
 brew tap homebrew/cask-fonts
 brew bundle --file ./Brewfile
 
-
 # Check for Oh My Zsh and install if we don't have it
 if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
-
 # Install zsh plugins
+install_plugins() {
+  ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+  type=$1
+  name=$2
+  repo=$3
 
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+  if [ "$type" = "theme" ]; then
+    plugin_path=$ZSH_CUSTOM/themes
+  elif [ "$type" = "plugin" ]; then
+    plugin_path=$ZSH_CUSTOM/plugins
+  else
+    echo "Invalid type: $type"
+    return 1
+  fi
 
-## plugins & themes auto-updater
-if [ ! -d "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" ] ; then
-  git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git ${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate || exit 1
-else
-  cd "${ZSH_CUSTOM}/plugins/ohmyzsh-full-autoupdate" || exit 1
-  git pull https://github.com/Pilaton/OhMyZsh-full-autoupdate.git || exit 1
-fi
+  plugin_path=$plugin_path/$name
 
-## powerlevel10k theme
-if [ ! -d "${ZSH_CUSTOM}/themes/powerlevel10k" ] ; then
-  git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k || exit 1
-else
-  cd "${ZSH_CUSTOM}/themes/powerlevel10k" || exit 1
-  git pull https://github.com/romkatv/powerlevel10k.git || exit 1
-fi
+  if [ ! -d "$plugin_path" ]; then
+    git clone "$repo" "$plugin_path" || exit 1
+  else
+    cd "$plugin_path" && git pull "$repo" || exit 1
+  fi
+}
 
-## plugin for informing existing alias for a command
-if [ ! -d "${ZSH_CUSTOM}/plugins/you-should-use" ] ; then
-  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM}/plugins/you-should-use || exit 1
-else
-  cd "${ZSH_CUSTOM}/plugins/you-should-use" || exit 1
-  git pull https://github.com/MichaelAquilina/zsh-you-should-use.git || exit 1
-fi
-
-## zsh-syntax-highlighting
-if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ] ; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting || exit 1
-else
-  cd "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" || exit 1
-  git pull https://github.com/zsh-users/zsh-syntax-highlighting.git || exit 1
-fi
-
-## zsh-autosuggestions
-if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" ] ; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions || exit 1
-else
-  cd "${ZSH_CUSTOM}/plugins/zsh-autosuggestions" || exit 1
-  git pull https://github.com/zsh-users/zsh-autosuggestions.git || exit 1
-fi
-
+install_plugins theme powerlevel10k https://github.com/romkatv/powerlevel10k.git
+install_plugins plugin ohmyzsh-full-autoupdate https://github.com/Pilaton/OhMyZsh-full-autoupdate.git
+install_plugins plugin you-should-use https://github.com/MichaelAquilina/zsh-you-should-use.git
+install_plugins plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
+install_plugins plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git
 
 echo "Setup configs via stow"
-cd $HOME/.dotfiles
+cd $HOME/.dotfiles || exit 1
 stow zsh
 stow vim
 stow git

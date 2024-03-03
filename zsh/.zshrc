@@ -18,6 +18,11 @@ HIST_STAMPS="mm/dd/yyyy"
 zstyle ':omz:update' mode auto  # :auto; disabled; reminder
 zstyle ':omz:update' frequency 15
 
+# History
+HISTSIZE=50000                # How many lines of history to keep in memory
+HISTFILE=~/.zsh_history       # Where to save history to disk
+SAVEHIST=50000                # Number of history entries to save to disk
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(

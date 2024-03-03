@@ -18,7 +18,10 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-export GPG_TTY=$(tty)
+
+#GPG specifics
+GPG_TTY=$(tty)
+export GPG_TTY
 
 export PATH="$PATH:$HOME/.local/bin"
 

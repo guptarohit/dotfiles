@@ -12,6 +12,8 @@ brew 'bat'
 brew 'fzf'
 brew 'eza'
 brew 'tree'
+brew 'vim'
+brew 'watch'
 
 # Apps
 cask 'obsidian'

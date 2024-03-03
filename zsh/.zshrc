@@ -34,68 +34,10 @@ plugins=(
 # Actually load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
-# Encoding stuff for the terminal
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-
-export PATH="/usr/local/Cellar/pyenv-virtualenv/1.2.1/shims:${PATH}";
-export PYENV_VIRTUALENV_INIT=1;
-_pyenv_virtualenv_hook() {
-  local ret=$?
-  if [ -n "${VIRTUAL_ENV-}" ]; then
-    eval "$(pyenv sh-activate --quiet || pyenv sh-deactivate --quiet || true)" || true
-  else
-    eval "$(pyenv sh-activate --quiet || true)" || true
-  fi
-  return $ret
-};
-typeset -g -a precmd_functions
-if [[ -z $precmd_functions[(r)_pyenv_virtualenv_hook] ]]; then
-  precmd_functions=(_pyenv_virtualenv_hook $precmd_functions);
-fi
-
-
-export GOPATH=$HOME/GolandProjects
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-
-
-export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-# Flutter
-export FLUTTERPATH=$HOME/development/flutter
-export PATH=$PATH:$FLUTTERPATH/bin
-
-export GPG_TTY=\$(tty)
-
-# Created by `pipx` on 2023-07-22 19:43:30
-export PATH="$PATH:$HOME/.local/bin"
-
-
-# airflow setup
-export PATH=${PATH}:"$HOME/Projects/airflow"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# START: Added by Updated Airflow Breeze autocomplete setup
-source $HOME/Projects/airflow/dev/breeze/autocomplete/breeze-complete-zsh.sh
-# END: Added by Updated Airflow Breeze autocomplete setup
 
-# (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
-export HOMEBREW_NO_ANALYTICS=1
-
+# Load custom configs
 typeset -a sources
 CONFIG_DIR="$HOME/.zsh.d"
 

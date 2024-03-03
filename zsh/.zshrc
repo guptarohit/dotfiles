@@ -55,3 +55,8 @@ for file in $sources[@]; do
        source $file
     fi
 done
+
+# override with local settings
+source ~/.zshrc.local
+
+# Anything below here was probably added automatically and should be re-adjusted or moved to ~/.zshrc.local

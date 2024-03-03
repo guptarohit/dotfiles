@@ -11,3 +11,4 @@ TODO.*
 RCS
 .*.secrets.*
 .gitconfig.local
+.zshrc.local

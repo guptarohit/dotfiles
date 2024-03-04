@@ -3,6 +3,9 @@
 These dotfiles are from my primary setup, the core of which includes: macOS, [iTerm2](https://iterm2.com/), and the zsh shell.
 Symlinks are managed with the [Stow](https://www.gnu.org/software/stow/).
 
+![Screenshot](./.github/images/setup_screenshot.png)
+
+
 ## Installation
 To set up, assuming `git` is installed, run:
 

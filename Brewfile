@@ -9,6 +9,7 @@ brew 'git-absorb' # absorb staged changes in current branch
 brew 'stow' # symlink manager
 brew 'tldr' # better than help
 brew 'bat' # better cat
+brew 'bat-extras' # various cli tools integrate with bat
 brew 'fzf' # fuzzy file searcher, used in scripts and in vim
 brew 'eza' # ls alternative
 brew 'tree' # pretty-print directory contents
@@ -28,6 +29,9 @@ brew 'tmux' # terminal multiplexer
 cask 'obsidian'
 cask 'spotify'
 cask 'docker'
+cask 'beyond-compare' # compare files and folders in nice UI
+cask 'sublime-text' # best text editor
+
 
 # Fonts
 cask 'font-0xproto-nerd-font'

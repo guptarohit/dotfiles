@@ -23,6 +23,8 @@ HISTSIZE=50000                # How many lines of history to keep in memory
 HISTFILE=~/.zsh_history       # Where to save history to disk
 SAVEHIST=50000                # Number of history entries to save to disk
 
+ZOXIDE_CMD_OVERRIDE=cd
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
@@ -32,7 +34,7 @@ plugins=(
     zsh-syntax-highlighting
     ohmyzsh-full-autoupdate
     you-should-use
-    z
+    zoxide
     colored-man-pages
 )
 

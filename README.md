@@ -1,9 +1,10 @@
-# dotfiles
+# Rohit’s dotfiles
 
-These dotfiles are from my primary setup, the core of which includes: macOS, [iTerm2](https://iterm2.com/), and the zsh shell.
-Symlinks are managed with the [Stow](https://www.gnu.org/software/stow/).
+These configuration files _aka_ dotfiles, and utilities are from my primary setup I use day-to-day, the core of which includes: macOS, [iTerm2](https://iterm2.com/), and the zsh shell. Symlinks for dotfiles are managed with the [Stow](https://www.gnu.org/software/stow/).
 
-![Screenshot](./.github/images/setup_screenshot.png)
+Feel free to try out these or use them as inspiration! If you have a suggestion, improvement or question, please feel free to open an issue or PR! :octocat:
+
+![iTerm2 setup screenshot](./.github/images/setup_screenshot.png)
 
 
 ## Installation
@@ -16,7 +17,7 @@ bash install.sh
 ```
 
 ## Usage
-To create symlinks, use stow. The following command will create symlinks for gnupg configs.
+To create symlinks, use [stow](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html). The following command will create symlinks for gnupg configs.
 ```bash
 stow gnupg
 ```
@@ -31,7 +32,20 @@ stow gnupg --adopt
 ## Local configs
 
 ### zsh
-System specific shell configs can be added to `~/.zshrc.local`. These will be sourced when the shell initializes.
+System specific shell configurations can be added to `~/.zshrc.local`. It will be sourced when the shell initializes.
 
 ### Git
-System specific git configs like user's name, email, signingkey, etc. can be added to `~/.gitconfig.local`.
+System specific git configurations like user's name, email, signing key, etc. can be added to `~/.gitconfig.local`.
+
+
+## Acknowledgements
+
+Inspired by various resources shared by the vibrant open-source community, including online resources and dotfiles repositories:
+
+- [GitHub ❤ ~/](http://dotfiles.github.io/)
+- [Using stow for dotfiles (video)](https://www.youtube.com/watch?v=y6XCebnB9gs)
+- [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles)
+- [Artem's dotfiles](https://github.com/sapegin/dotfiles)
+- [Nico's dotfiles](https://github.com/snics/dotfiles)
+- [Jonas's dotfiles](https://github.com/JDevlieghere/dotfiles)
+- [Alan's dotfiles](https://github.com/apinstein/dotfiles)

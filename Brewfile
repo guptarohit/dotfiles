@@ -38,6 +38,9 @@ cask 'font-0xproto-nerd-font'
 cask 'font-cascadia-code'
 cask 'font-commit-mono'
 cask 'font-commit-mono-nerd-font'
+cask "font-fira-code"
 cask 'font-fira-code-nerd-font'
+cask "font-hack"
+cask "font-hack-nerd-font"
 cask 'font-monaspace'
 cask 'font-monaspace-nerd-font'

@@ -64,7 +64,3 @@ cd $HOME/.dotfiles || exit 1
 stow zsh
 stow vim
 stow git
-
-echo "Change to home then confirm"
-cd
-ls -la

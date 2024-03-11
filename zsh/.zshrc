@@ -50,6 +50,7 @@ CONFIG_DIR="$HOME/.zsh.d"
 
 sources+="$CONFIG_DIR/alias.zsh"
 sources+="$CONFIG_DIR/exports.zsh"
+sources+="$CONFIG_DIR/functions.zsh"
 sources+="$CONFIG_DIR/private.zsh"
 
 for file in $sources[@]; do

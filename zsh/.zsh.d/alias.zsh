@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias wttr='curl wttr.in/'
 alias dotfiles='cd ~/.dotfiles'
 alias grep='grep --color=auto'
@@ -16,17 +18,6 @@ alias cat='bat'
 
 # Open from the terminal
 alias o='open'
-
-# Create a directory and cd into it
-mcd() {
-    mkdir "${1}" && cd "${1}"
-}
-
-# Generate a random password of a given length, copy to clipboard
-genpass(){
-    length="${1:-16}"
-    openssl rand -base64 $length | rev | cut -b 2- | rev | pbcopy >/dev/null 2>&1
-}
 
 # neofetch: https://github.com/dylanaraps/neofetch
 command -v neofetch >/dev/null 2>&1 && alias neofetch="neofetch --source $HOME/.config/neofetch/nyancat.ascii"

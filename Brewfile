@@ -31,7 +31,7 @@ cask 'spotify'
 cask 'docker'
 cask 'beyond-compare' # compare files and folders in nice UI
 cask 'sublime-text' # best text editor
-
+cask 'iterm2'
 
 # Fonts
 cask 'font-0xproto-nerd-font'

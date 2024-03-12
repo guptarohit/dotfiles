@@ -64,3 +64,18 @@ cd $HOME/.dotfiles || exit 1
 stow zsh
 stow vim
 stow git
+
+echo "Setting up iTerm2 preferences..."
+stow iterm2
+
+if [ -d "/Applications/iTerm.app" ]; then
+  # Specify the preferences directory
+  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.config/iterm2_settings"
+
+  # Tell iTerm2 to use the custom preferences in the directory
+  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+  # Tell iTerm2 to save preferences automatically
+  defaults write com.googlecode.iterm2.plist "NoSyncNeverRemindPrefsChangesLostForFile_selection" -int 2
+fi
+

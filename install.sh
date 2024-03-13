@@ -61,9 +61,13 @@ install_plugins plugin zsh-autosuggestions https://github.com/zsh-users/zsh-auto
 
 echo "Setup configs via stow"
 cd $HOME/.dotfiles || exit 1
+stow stow
 stow zsh
+stow tmux
 stow vim
 stow git
+stow fd
+stow bat
 
 echo "Setting up iTerm2 preferences..."
 stow iterm2

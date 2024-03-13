@@ -11,6 +11,7 @@ brew 'tldr' # better than help
 brew 'bat' # better cat
 brew 'bat-extras' # various cli tools integrate with bat
 brew 'fzf' # fuzzy file searcher, used in scripts and in vim
+brew 'fd' # fast find
 brew 'eza' # ls alternative
 brew 'tree' # pretty-print directory contents
 brew 'vim' # vim (latest)
@@ -32,15 +33,16 @@ cask 'docker'
 cask 'beyond-compare' # compare files and folders in nice UI
 cask 'sublime-text' # best text editor
 cask 'iterm2'
+cask 'raycast'
 
 # Fonts
 cask 'font-0xproto-nerd-font'
 cask 'font-cascadia-code'
 cask 'font-commit-mono'
 cask 'font-commit-mono-nerd-font'
-cask "font-fira-code"
+cask 'font-fira-code'
 cask 'font-fira-code-nerd-font'
-cask "font-hack"
-cask "font-hack-nerd-font"
+cask 'font-hack'
+cask 'font-hack-nerd-font'
 cask 'font-monaspace'
 cask 'font-monaspace-nerd-font'

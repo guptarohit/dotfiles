@@ -1,0 +1,19 @@
+# Misc Folders
+.java
+.android
+.Android*
+.git
+.local
+.gradle
+.oh-my-zsh
+.vim
+.tmux
+.vscode
+.yarn
+.expo
+.themes
+.snm
+
+# Rust
+.rustup
+.cargo

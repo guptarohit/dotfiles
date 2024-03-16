@@ -4,6 +4,7 @@ brew 'wget' # file downloader
 brew 'htop' # a colorful top alternative
 brew 'httpie' # http client
 brew 'jq' # work with JSON files in shell scripts
+brew 'jless' # cli JSON viewer
 brew 'diff-so-fancy' # good-looking diffs
 brew 'git-absorb' # absorb staged changes in current branch
 brew 'stow' # symlink manager

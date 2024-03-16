@@ -2,8 +2,6 @@
 
 These configuration files _aka_ dotfiles, and utilities are from my primary setup I use day-to-day, the core of which includes: macOS, [iTerm2](https://iterm2.com/), and the zsh shell. Symlinks for dotfiles are managed with the [Stow](https://www.gnu.org/software/stow/).
 
-Feel free to try out these or use them as inspiration! If you have a suggestion, improvement or question, please feel free to open an issue or PR! :octocat:
-
 ![iTerm2 setup screenshot](./.github/images/setup_screenshot.png)
 
 
@@ -15,6 +13,8 @@ git clone https://github.com/guptarohit/dotfiles.git ~/.dotfiles
 cd $HOME/.dotfiles
 bash install.sh
 ```
+
+`install.sh` is an idempotent script.
 
 ## Usage
 To create symlinks, use [stow](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html). The following command will create symlinks for gnupg configs.

@@ -16,6 +16,10 @@ bash install.sh
 
 `install.sh` is an idempotent script.
 
+### Tmux plugins
+To install plugins, including the [Catppuccin](https://github.com/catppuccin/tmux) theme, run the command prefix + I.
+
+
 ## Usage
 To create symlinks, use [stow](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html). The following command will create symlinks for gnupg configs.
 ```bash

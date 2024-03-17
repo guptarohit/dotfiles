@@ -28,6 +28,18 @@ if test ! $(which omz); then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
+clone_or_pull(){
+  repo_url=$1
+  directory=$2
+
+  if [ ! -d "$directory" ]; then
+    git clone "$repo_url" "$directory" || exit 1
+  else
+    cd "$directory" && git pull "$repo_url" || exit 1
+  fi
+}
+
+
 # Install zsh plugins
 install_plugins() {
   ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
@@ -46,11 +58,7 @@ install_plugins() {
 
   plugin_path=$plugin_path/$name
 
-  if [ ! -d "$plugin_path" ]; then
-    git clone "$repo" "$plugin_path" || exit 1
-  else
-    cd "$plugin_path" && git pull "$repo" || exit 1
-  fi
+  clone_or_pull "$repo" "$plugin_path"
 }
 
 install_plugins theme powerlevel10k https://github.com/romkatv/powerlevel10k.git
@@ -68,9 +76,9 @@ stow vim
 stow git
 stow fd
 stow bat
+stow iterm2
 
 echo "Setting up iTerm2 preferences..."
-stow iterm2
 
 if [ -d "/Applications/iTerm.app" ]; then
   # Specify the preferences directory
@@ -83,3 +91,5 @@ if [ -d "/Applications/iTerm.app" ]; then
   defaults write com.googlecode.iterm2.plist "NoSyncNeverRemindPrefsChangesLostForFile_selection" -int 2
 fi
 
+echo "Installing tmux plugins manager..."
+clone_or_pull https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

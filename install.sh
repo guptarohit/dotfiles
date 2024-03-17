@@ -77,6 +77,7 @@ stow git
 stow fd
 stow bat
 stow iterm2
+stow lazygit
 
 echo "Setting up iTerm2 preferences..."
 

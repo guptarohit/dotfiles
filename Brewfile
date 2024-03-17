@@ -26,6 +26,7 @@ brew 'pyenv' # tool for Python version management
 brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
 brew 'neofetch' # system info script
 brew 'tmux' # terminal multiplexer
+brew 'lazygit' # TUI for git commands
 
 # Apps
 cask 'obsidian'

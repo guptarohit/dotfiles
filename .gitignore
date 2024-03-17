@@ -11,3 +11,6 @@ Brewfile.lock.json
 
 # IDE
 .idea
+
+# lazygit
+lazygit/.config/lazygit/state.yml

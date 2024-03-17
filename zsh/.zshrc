@@ -46,12 +46,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Load custom configs
 typeset -a sources
-CONFIG_DIR="$HOME/.zsh.d"
+ZSH_CONFIG_DIR="$HOME/.zsh.d"
 
-sources+="$CONFIG_DIR/alias.zsh"
-sources+="$CONFIG_DIR/exports.zsh"
-sources+="$CONFIG_DIR/functions.zsh"
-sources+="$CONFIG_DIR/private.zsh"
+sources+="$ZSH_CONFIG_DIR/alias.zsh"
+sources+="$ZSH_CONFIG_DIR/exports.zsh"
+sources+="$ZSH_CONFIG_DIR/functions.zsh"
+sources+="$ZSH_CONFIG_DIR/private.zsh"
 
 for file in $sources[@]; do
     if [[ -a $file ]]; then

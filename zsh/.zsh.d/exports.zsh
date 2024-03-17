@@ -31,3 +31,5 @@ export PATH="$PATH:$HOME/.local/bin"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"

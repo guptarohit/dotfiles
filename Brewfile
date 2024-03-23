@@ -27,6 +27,7 @@ brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
 brew 'neofetch' # system info script
 brew 'tmux' # terminal multiplexer
 brew 'lazygit' # TUI for git commands
+brew 'ripgrep' # fast grep
 
 # Apps
 cask 'obsidian'

@@ -29,6 +29,7 @@ brew 'tmux' # terminal multiplexer
 brew 'lazygit' # TUI for git commands
 brew 'ripgrep' # fast grep
 brew 'asciinema' # terminal session recorder
+brew 'difftastic' # structural diff that understands syntax
 
 # Apps
 cask 'obsidian'

@@ -59,6 +59,9 @@ for file in $sources[@]; do
     fi
 done
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
 # override with local settings
 source ~/.zshrc.local
 

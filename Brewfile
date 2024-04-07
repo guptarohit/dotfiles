@@ -28,6 +28,7 @@ brew 'neofetch' # system info script
 brew 'tmux' # terminal multiplexer
 brew 'lazygit' # TUI for git commands
 brew 'ripgrep' # fast grep
+brew 'asciinema' # terminal session recorder
 
 # Apps
 cask 'obsidian'

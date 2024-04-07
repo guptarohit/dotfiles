@@ -16,6 +16,9 @@ bash install.sh
 
 `install.sh` is an idempotent script.
 
+> [!NOTE]
+> Please backup configrations before running script.
+
 ### Tmux plugins
 To install plugins, including the [Catppuccin](https://github.com/catppuccin/tmux) theme, run the command prefix + I.
 

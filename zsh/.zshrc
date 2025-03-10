@@ -1,3 +1,13 @@
+zmodload zsh/zprof
+
+# Optimize compinit for faster loading
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -15,7 +25,7 @@ CASE_SENSITIVE="false"
 ENABLE_CORRECTION="false"
 HIST_STAMPS="mm/dd/yyyy"
 
-zstyle ':omz:update' mode auto  # :auto; disabled; reminder
+zstyle ':omz:update' mode disabled  # :auto; disabled; reminder
 zstyle ':omz:update' frequency 15
 
 # History
@@ -30,9 +40,6 @@ ZOXIDE_CMD_OVERRIDE=cd
 plugins=(
     git
     gitfast
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    ohmyzsh-full-autoupdate
     you-should-use
     zoxide
     colored-man-pages
@@ -59,10 +66,50 @@ for file in $sources[@]; do
     fi
 done
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
+# Lazy-load pyenv - only initialize when needed
+pyenv() {
+  unfunction "$0"
+  eval "$(command pyenv init --path)"
+  eval "$(command pyenv init -)"
+  eval "$(command pyenv virtualenv-init -)"
+  $0 "$@"
+}
+
+# lazy-loading fzf
+# Only initialize fzf once and then map Ctrl+R to the history widget
+function load-fzf() {
+  # Remove this function
+  unfunction load-fzf
+  
+  # Load fzf
+  if [[ -f ~/.fzf.zsh ]]; then
+    source ~/.fzf.zsh
+  else
+    eval "$(command fzf --zsh)"
+  fi
+  
+  # Invoke the original behavior (fzf history search)
+  zle && zle fzf-history-widget
+}
+
+# Create the widget and bind it to Ctrl+R
+zle -N load-fzf
+bindkey '^R' load-fzf
 
 # override with local settings
 source ~/.zshrc.local
+
+# Load zsh-autosuggestions and zsh-syntax-highlighting last for better performance
+if [[ -f $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source $ZSH_CUSTOM/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Load syntax-highlighting absolutely last as it needs to process all previous commands and widgets
+if [[ -f $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# uncomment this line to profile zsh startup time
+# zprof
 
 # Anything below here was probably added automatically and should be re-adjusted or moved to ~/.zshrc.local

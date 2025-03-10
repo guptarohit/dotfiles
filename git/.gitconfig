@@ -49,3 +49,5 @@
 	ll = log --stat --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit
 	# difftastic
 	dft = difftool
+[init]
+	defaultBranch = main

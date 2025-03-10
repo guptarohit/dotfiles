@@ -1,5 +1,3 @@
-[include]
-  path = ~/.gitconfig.local
 [commit]
 	gpgsign = true
 [filter "lfs"]
@@ -51,3 +49,5 @@
 	dft = difftool
 [init]
 	defaultBranch = main
+[include]
+  path = ~/.gitconfig.local

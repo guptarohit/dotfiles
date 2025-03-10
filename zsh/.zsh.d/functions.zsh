@@ -20,3 +20,9 @@ genpass(){
     length="${1:-16}"
     openssl rand -base64 $length | rev | cut -b 2- | rev | pbcopy >/dev/null 2>&1
 }
+
+# Measure the startup time of the shell
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

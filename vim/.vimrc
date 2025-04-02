@@ -49,3 +49,8 @@ call plug#end()
 
 " catppuccin theme for airline
 let g:airline_theme = 'catppuccin_mocha'
+
+" Source local configuration
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

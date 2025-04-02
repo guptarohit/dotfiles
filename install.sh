@@ -78,6 +78,7 @@ stow fd
 stow bat
 stow iterm2
 stow lazygit
+stow neofetch
 
 echo "Setting up iTerm2 preferences..."
 
@@ -94,3 +95,7 @@ fi
 
 echo "Installing tmux plugins manager..."
 clone_or_pull https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install vim plugins
+echo "Installing vim plugins..."
+vim +PlugInstall +qall

@@ -1,8 +1,16 @@
-# Rohit’s dotfiles
+# Rohit's dotfiles
 
 These configuration files _aka_ dotfiles, and utilities are from my primary setup I use day-to-day, the core of which includes: macOS, [iTerm2](https://iterm2.com/), and the zsh shell. Symlinks for dotfiles are managed with the [Stow](https://www.gnu.org/software/stow/).
 
 ![iTerm2 setup screenshot](./.github/images/setup_screenshot.png)
+
+
+## Highlights
+- Flexible, terminal-based dev environment with iTerm2+Tmux
+- Shell support for Zsh
+- Fast, idempotent setup with GNU Stow
+- Support for both Apple Silicon and Intel Macs
+- Vim with plugins and theme support
 
 
 ## Installation
@@ -13,11 +21,28 @@ git clone https://github.com/guptarohit/dotfiles.git ~/.dotfiles
 cd $HOME/.dotfiles
 bash install.sh
 ```
-
-`install.sh` is an idempotent script.
+`install.sh` is an idempotent script that will:
+- Install Homebrew and packages from the `Brewfile`
+- Set up Oh My Zsh with plugins
+- Configure vim with plugins
+- Apply all dotfiles using GNU Stow
+- Set up iTerm2 preferences
 
 > [!NOTE]
-> Please backup configrations before running script.
+> Please backup configurations before running script.
+
+### macOS System Preferences
+For macOS-specific system preferences and customizations, a separate script is present.
+
+This script customizes various macOS settings for an improved experience. Review the script before running to understand the changes it will make.
+
+```bash
+bash ~/.dotfiles/macos/defaults.sh
+```
+
+### Vim setup
+The vim configuration uses [vim-plug](https://github.com/junegunn/vim-plug) as a plugin manager. Plugins will be installed automatically during the setup process.
+To install or update plugins manually, open vim and run `:PlugInstall`.
 
 ### Tmux plugins
 To install plugins, including the [Catppuccin](https://github.com/catppuccin/tmux) theme, run the command prefix + I.
@@ -43,6 +68,9 @@ System specific shell configurations can be added to `~/.zshrc.local`. It will b
 
 ### Git
 System specific git configurations like user's name, email, signing key, etc. can be added to `~/.gitconfig.local`.
+
+### Vim
+System specific vim configurations can be added to `~/.vimrc.local`. It will be sourced at the end of the main .vimrc file.
 
 
 ## Acknowledgements

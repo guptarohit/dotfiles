@@ -18,11 +18,7 @@ set nocompatible                                    " Make Vim more useful
 
 set clipboard=unnamed                               " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set wildmenu                                        " Enhance command-line completion
-set esckeys                                         " Allow cursor keys in insert mode
 set backspace=indent,eol,start                      " Allow backspace in insert mode
-
-" clipboard
-set clipboard=unnamed                               " allow yy, etc. to interact with OS X clipboard
 
 " search
 set hlsearch                                        " highlighted search results

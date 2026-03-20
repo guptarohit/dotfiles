@@ -14,3 +14,7 @@ Brewfile.lock.json
 
 # lazygit
 lazygit/.config/lazygit/state.yml
+
+# Per-machine local configs
+git/.gitconfig.local
+zsh/.zshrc.local

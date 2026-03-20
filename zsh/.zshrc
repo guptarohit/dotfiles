@@ -1,5 +1,3 @@
-zmodload zsh/zprof
-
 # Optimize compinit for faster loading
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
@@ -39,7 +37,6 @@ ZOXIDE_CMD_OVERRIDE=cd
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
     git
-    gitfast
     you-should-use
     zoxide
     colored-man-pages

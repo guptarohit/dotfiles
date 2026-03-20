@@ -1,30 +1,33 @@
 #!/bin/sh
+set -euo pipefail
 
 echo "Setting up Mac..."
 
 mkdir -p "$HOME/.config"
 
 # Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
+if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Removes .zshrc from $HOME (if it exists)
-rm -rf $HOME/.zshrc
+# Backup existing .zshrc if present
+if [ -f "$HOME/.zshrc" ]; then
+  mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
+  echo "Backed up ~/.zshrc to ~/.zshrc.bak"
+fi
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew tap homebrew/cask-fonts
 brew bundle --file ./Brewfile
 
 # Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
@@ -42,7 +45,7 @@ clone_or_pull(){
 
 # Install zsh plugins
 install_plugins() {
-  ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+  ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
   type=$1
   name=$2
   repo=$3
@@ -68,7 +71,7 @@ install_plugins plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-
 install_plugins plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git
 
 echo "Setup configs via stow"
-cd $HOME/.dotfiles || exit 1
+cd "$HOME/.dotfiles" || exit 1
 stow stow
 stow zsh
 stow tmux

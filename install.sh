@@ -79,6 +79,7 @@ stow bat
 stow iterm2
 stow lazygit
 stow neofetch
+stow --adopt agents
 
 echo "Setting up iTerm2 preferences..."
 

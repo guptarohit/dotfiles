@@ -19,8 +19,8 @@ alias cat='bat'
 # Open from the terminal
 alias o='open'
 
-# neofetch: https://github.com/dylanaraps/neofetch
-command -v neofetch >/dev/null 2>&1 && alias neofetch="neofetch --source $HOME/.config/neofetch/nyancat.ascii"
+# fastfetch: https://github.com/fastfetch-cli/fastfetch
+command -v fastfetch >/dev/null 2>&1 && alias fastfetch="fastfetch --logo-type file-raw --logo $HOME/.config/fastfetch/nyancat.ascii"
 
 # Download file and save it with filename of remote file
 alias download="curl -O -L"

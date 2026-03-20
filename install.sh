@@ -78,7 +78,7 @@ stow fd
 stow bat
 stow iterm2
 stow lazygit
-stow neofetch
+stow fastfetch
 stow --adopt agents
 
 # Symlink Claude Code skills to shared agent skills directory

@@ -24,7 +24,7 @@ brew 'pinentry-mac' # tool that allow GnuPG to read passphrases
 brew 'rust' # rust (latest)
 brew 'pyenv' # tool for Python version management
 brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
-brew 'neofetch' # system info script
+brew 'fastfetch' # system info script
 brew 'tmux' # terminal multiplexer
 brew 'lazygit' # TUI for git commands
 brew 'ripgrep' # fast grep

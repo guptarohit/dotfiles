@@ -81,6 +81,17 @@ stow lazygit
 stow neofetch
 stow --adopt agents
 
+# Symlink Claude Code skills to shared agent skills directory
+mkdir -p ~/.claude
+if [ -d ~/.claude/skills ] && [ ! -L ~/.claude/skills ]; then
+  mv ~/.claude/skills ~/.claude/skills.bak
+fi
+ln -sfn ~/.agents/skills ~/.claude/skills
+if [ -d ~/.claude/skills.bak ]; then
+  rsync -a ~/.claude/skills.bak/ ~/.agents/skills/
+  rm -rf ~/.claude/skills.bak
+fi
+
 echo "Setting up iTerm2 preferences..."
 
 if [ -d "/Applications/iTerm.app" ]; then

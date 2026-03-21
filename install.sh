@@ -70,6 +70,9 @@ install_plugins plugin you-should-use https://github.com/MichaelAquilina/zsh-you
 install_plugins plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
 install_plugins plugin zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions.git
 
+# Install fzf-tab (not an OMZ plugin, but installed to OMZ custom plugins dir)
+install_plugins plugin fzf-tab https://github.com/Aloxaf/fzf-tab.git
+
 echo "Setup configs via stow"
 cd "$HOME/.dotfiles" || exit 1
 stow stow

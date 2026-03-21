@@ -14,7 +14,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias help='tldr'
 
 # Replace cat with bat
-alias cat='bat'
+alias cat='bat --paging=never --style=plain'
 
 # Open from the terminal
 alias o='open'

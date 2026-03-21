@@ -10,35 +10,30 @@
 [push]
 	autoSetupRemote = true
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	autocrlf = false
 	eol = lf
 [interactive]
-	diffFilter = diff-so-fancy --patch
+	diffFilter = delta --color-only
 [color]
 	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[delta]
+	features = catppuccin-mocha
+	navigate = true
+	line-numbers = true
+	dark = true
+[merge]
+	conflictstyle = diff3
 [diff]
     tool = difftastic
+    colorMoved = default
 [difftool]
     prompt = false
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
 [pager]
-    diff = diff-so-fancy | less --tabs=1,5 -RFX
-    show = diff-so-fancy | less --tabs=1,5 -RFX
+    diff = delta
+    show = delta
     difftool = true
 [alias]
 	# Compact and readable log
@@ -51,3 +46,4 @@
 	defaultBranch = main
 [include]
   path = ~/.gitconfig.local
+  path = ~/.config/delta/themes/catppuccin.gitconfig

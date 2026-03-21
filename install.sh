@@ -64,7 +64,6 @@ install_plugins() {
   clone_or_pull "$repo" "$plugin_path"
 }
 
-install_plugins theme powerlevel10k https://github.com/romkatv/powerlevel10k.git
 install_plugins plugin ohmyzsh-full-autoupdate https://github.com/Pilaton/OhMyZsh-full-autoupdate.git
 install_plugins plugin you-should-use https://github.com/MichaelAquilina/zsh-you-should-use.git
 install_plugins plugin zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -86,6 +85,9 @@ stow iterm2
 stow lazygit
 stow fastfetch
 stow atuin
+stow starship
+stow btop
+stow lazydocker
 stow --adopt agents
 
 # Symlink Claude Code skills to shared agent skills directory

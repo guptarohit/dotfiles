@@ -2,10 +2,11 @@
 brew 'zsh' # zsh (latest)
 brew 'wget' # file downloader
 brew 'htop' # a colorful top alternative
+brew 'btop' # modern resource monitor (TUI)
 brew 'httpie' # http client
 brew 'jq' # work with JSON files in shell scripts
 brew 'jless' # cli JSON viewer
-brew 'diff-so-fancy' # good-looking diffs
+brew 'git-delta' # syntax-highlighting pager for git diffs
 brew 'git-absorb' # absorb staged changes in current branch
 brew 'stow' # symlink manager
 brew 'tldr' # better than help
@@ -18,6 +19,7 @@ brew 'tree' # pretty-print directory contents
 brew 'vim' # vim (latest)
 brew 'watch' # execute a program periodically
 brew 'zoxide' # switch between most used directories
+brew 'starship' # cross-shell prompt
 brew 'git' # git version control (latest version)
 brew 'gnupg' # tool for managing pgp keys
 brew 'pinentry-mac' # tool that allow GnuPG to read passphrases
@@ -27,6 +29,7 @@ brew 'pyenv-virtualenv' # pyenv plugin to manage virtualenv
 brew 'fastfetch' # system info script
 brew 'tmux' # terminal multiplexer
 brew 'lazygit' # TUI for git commands
+brew 'lazydocker' # TUI for docker and docker-compose
 brew 'ripgrep' # fast grep
 brew 'asciinema' # terminal session recorder
 brew 'difftastic' # structural diff that understands syntax

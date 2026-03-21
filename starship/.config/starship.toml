@@ -1,0 +1,64 @@
+# Starship prompt - Catppuccin Mocha theme
+
+format = """$directory$git_branch$git_status$line_break$character"""
+
+right_format = """$cmd_duration$python$hostname$time"""
+
+add_newline = true
+
+[character]
+success_symbol = "[❯](bold #CBA6F7)"
+error_symbol = "[❯](bold #F38BA8)"
+
+[directory]
+style = "bold #89B4FA"
+truncation_length = 3
+truncate_to_repo = false
+substitutions = {}
+format = "[$path]($style) "
+
+[git_branch]
+symbol = "\ue0a0"
+style = "#B4BEFE"
+format = "[on](#6C7086) [$symbol $branch]($style) "
+
+[git_status]
+style = "#6C7086"
+format = "([\\[$all_status$ahead_behind\\]]($style))"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇡⇣"
+conflicted = "="
+up_to_date = ""
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[cmd_duration]
+min_time = 5000
+style = "#F9E2AF"
+format = "took [$duration]($style) "
+
+[python]
+style = "#6C7086"
+format = "[$virtualenv]($style) "
+symbol = ""
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[nodejs]
+disabled = true
+
+[hostname]
+style = "#6C7086"
+format = "[$ssh_symbol$hostname]($style) "
+ssh_only = true
+
+[time]
+disabled = false
+style = "#6C7086"
+time_format = "%H:%M:%S"
+format = "[$time]($style) "

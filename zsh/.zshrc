@@ -64,21 +64,30 @@ pyenv() {
   $0 "$@"
 }
 
-# Load fzf
-if [[ -f ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-else
-  eval "$(command fzf --zsh)"
-fi
+# lazy-loading fzf
+# Only initialize fzf once and then map Ctrl+R to the history widget
+function load-fzf() {
+  # Remove this function
+  unfunction load-fzf
+
+  # Load fzf
+  if [[ -f ~/.fzf.zsh ]]; then
+    source ~/.fzf.zsh
+  else
+    eval "$(command fzf --zsh)"
+  fi
+
+  # Invoke the original behavior (fzf history search)
+  zle && zle fzf-history-widget
+}
+
+# Create the widget and bind it to Ctrl+R
+zle -N load-fzf
+bindkey '^R' load-fzf
 
 # fzf-tab: fuzzy completion for ZSH
 if [[ -f $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh ]]; then
   source $ZSH_CUSTOM/plugins/fzf-tab/fzf-tab.plugin.zsh
-fi
-
-# Atuin: shell history with sync (takes over Ctrl+R)
-if command -v atuin >/dev/null 2>&1; then
-  eval "$(atuin init zsh)"
 fi
 
 # override with local settings

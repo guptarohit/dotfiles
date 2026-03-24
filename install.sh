@@ -84,7 +84,6 @@ stow bat
 stow iterm2
 stow lazygit
 stow fastfetch
-stow atuin
 stow starship
 stow btop
 stow lazydocker

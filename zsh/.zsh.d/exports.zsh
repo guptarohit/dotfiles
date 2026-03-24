@@ -15,9 +15,7 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # golang paths
 export GOPATH=$HOME/GolandProjects
-export GOROOT=/usr/local/opt/go/libexec
 export PATH="$GOPATH/bin:$PATH"
-export PATH=$PATH:$GOROOT/bin
 
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 

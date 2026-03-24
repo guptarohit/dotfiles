@@ -35,6 +35,7 @@ brew 'asciinema' # terminal session recorder
 brew 'difftastic' # structural diff that understands syntax
 brew 'atuin' # shell history with sync
 brew 'sesh' # tmux session manager with fzf
+brew 'go' # golang
 
 # Apps
 cask 'obsidian'
